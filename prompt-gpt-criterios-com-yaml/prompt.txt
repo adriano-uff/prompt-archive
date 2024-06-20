@@ -1,0 +1,15 @@
+ELABORE UMA LISTA DE CASOS DE TESTES DE API PARA TODOS OS ENDPOINTS enviados no arquivo anexo, levando em conta os níveis de cobertura de API propostos abaixo, peço que responda com uma lista, não em código fonte, explique em alto nível qual o resultado esperado:
+Nível 1: (um teste por endpoint)
+Nível 2: (um teste por operação por endpoint)
+Nível 3: (um teste para cada Content-Type possível para cada endpoint)
+
+(todos testes devem usar os parâmetros propostos)
+Nível 4: (um teste para cada tipo de HTTP status para cada endpoint <2XX, 4XX, 5XX>)
+Nível 5: (um teste para cada HTTP status disponível para cada endpoint)
+Nível 6: (um teste para cada response-body para cada endpoint)
+
+(responda SOMENTE com um arquivo txt)
+
+##############
+
+FOI ENVIADO O ARQUIVO OPENAPI.YAML

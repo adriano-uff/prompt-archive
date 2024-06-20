@@ -1,0 +1,462 @@
+Passos:
+
+    Extrair Endpoints e Operações do arquivo YAML.
+    Criar casos de teste para cada nível de cobertura.
+    Salvar a lista de casos de teste em um arquivo de texto.
+
+Vou começar o processo agora.
+Endpoints e Operações Extraídas
+
+A partir do arquivo openapi.yaml, extraímos os seguintes endpoints e suas respectivas operações:
+
+    /pet
+        POST
+        PUT
+
+    /pet/findByStatus
+        GET
+
+    /pet/findByTags
+        GET
+
+    /pet/{petId}
+        GET
+        POST
+        DELETE
+
+    /store/inventory
+        GET
+
+    /store/order
+        POST
+
+    /store/order/{orderId}
+        GET
+        DELETE
+
+    /user
+        POST
+        PUT
+
+    /user/createWithList
+        POST
+
+    /user/{username}
+        GET
+        PUT
+        DELETE
+
+Lista de Casos de Teste por Nível de Cobertura
+
+Cada caso de teste será descrito de forma a cobrir diferentes níveis de cobertura conforme solicitado.
+Nível 1: (um teste por endpoint)
+
+    POST /pet
+        Adicionar um novo pet com dados válidos.
+
+    PUT /pet
+        Atualizar um pet existente com dados válidos.
+
+    GET /pet/findByStatus
+        Buscar pets pelo status 'available'.
+
+    GET /pet/findByTags
+        Buscar pets por uma tag 'cute'.
+
+    GET /pet/{petId}
+        Obter detalhes de um pet existente por ID.
+
+    POST /pet/{petId}
+        Atualizar um pet por ID com dados válidos.
+
+    DELETE /pet/{petId}
+        Deletar um pet por ID válido.
+
+    GET /store/inventory
+        Consultar inventário de pets.
+
+    POST /store/order
+        Criar uma nova ordem com dados válidos.
+
+    GET /store/order/{orderId}
+        Obter uma ordem por ID válido.
+
+    DELETE /store/order/{orderId}
+        Deletar uma ordem por ID válido.
+
+    POST /user
+        Criar um novo usuário com dados válidos.
+
+    PUT /user
+        Atualizar um usuário existente com dados válidos.
+
+    POST /user/createWithList
+        Criar múltiplos usuários de uma lista com dados válidos.
+
+    GET /user/{username}
+        Obter detalhes de um usuário por nome de usuário válido.
+
+    PUT /user/{username}
+        Atualizar um usuário por nome de usuário válido.
+
+    DELETE /user/{username}
+        Deletar um usuário por nome de usuário válido.
+
+Nível 2: (um teste por operação por endpoint)
+
+    POST /pet
+        Adicionar um novo pet com dados válidos.
+        Adicionar um novo pet com dados inválidos.
+
+    PUT /pet
+        Atualizar um pet existente com dados válidos.
+        Atualizar um pet com ID inválido.
+
+    GET /pet/findByStatus
+        Buscar pets pelo status 'available'.
+        Buscar pets pelo status 'sold'.
+
+    GET /pet/findByTags
+        Buscar pets por uma tag 'cute'.
+        Buscar pets por uma tag inexistente.
+
+    GET /pet/{petId}
+        Obter detalhes de um pet existente por ID válido.
+        Tentar obter detalhes de um pet por ID inválido.
+
+    POST /pet/{petId}
+        Atualizar um pet por ID válido com dados válidos.
+        Atualizar um pet por ID inválido.
+
+    DELETE /pet/{petId}
+        Deletar um pet por ID válido.
+        Tentar deletar um pet por ID inválido.
+
+    GET /store/inventory
+        Consultar inventário de pets (dados válidos).
+        Consultar inventário de pets (dados inválidos).
+
+    POST /store/order
+        Criar uma nova ordem com dados válidos.
+        Criar uma nova ordem com dados inválidos.
+
+    GET /store/order/{orderId}
+        Obter uma ordem por ID válido.
+        Tentar obter uma ordem por ID inválido.
+
+    DELETE /store/order/{orderId}
+        Deletar uma ordem por ID válido.
+        Tentar deletar uma ordem por ID inválido.
+
+    POST /user
+        Criar um novo usuário com dados válidos.
+        Criar um novo usuário com dados inválidos.
+
+    PUT /user
+        Atualizar um usuário existente com dados válidos.
+        Atualizar um usuário existente com dados inválidos.
+
+    POST /user/createWithList
+        Criar múltiplos usuários de uma lista com dados válidos.
+        Criar múltiplos usuários de uma lista com dados inválidos.
+
+    GET /user/{username}
+        Obter detalhes de um usuário por nome de usuário válido.
+        Tentar obter detalhes de um usuário por nome de usuário inválido.
+
+    PUT /user/{username}
+        Atualizar um usuário por nome de usuário válido.
+        Tentar atualizar um usuário por nome de usuário inválido.
+
+    DELETE /user/{username}
+        Deletar um usuário por nome de usuário válido.
+        Tentar deletar um usuário por nome de usuário inválido.
+
+Nível 3: (um teste para cada Content-Type possível para cada endpoint)
+
+    POST /pet
+        Adicionar um novo pet com application/json.
+        Adicionar um novo pet com application/xml.
+
+    PUT /pet
+        Atualizar um pet com application/json.
+        Atualizar um pet com application/xml.
+
+    GET /pet/findByStatus
+        Buscar pets com application/json.
+        Buscar pets com application/xml.
+
+    GET /pet/findByTags
+        Buscar pets com application/json.
+        Buscar pets com application/xml.
+
+    GET /pet/{petId}
+        Obter detalhes com application/json.
+        Obter detalhes com application/xml.
+
+    POST /pet/{petId}
+        Atualizar um pet com application/json.
+        Atualizar um pet com application/xml.
+
+    DELETE /pet/{petId}
+        Deletar um pet com application/json.
+        Deletar um pet com application/xml.
+
+    GET /store/inventory
+        Consultar inventário com application/json.
+        Consultar inventário com application/xml.
+
+    POST /store/order
+        Criar uma nova ordem com application/json.
+        Criar uma nova ordem com application/xml.
+
+    GET /store/order/{orderId}
+        Obter uma ordem com application/json.
+        Obter uma ordem com application/xml.
+
+    DELETE /store/order/{orderId}
+        Deletar uma ordem com application/json.
+        Deletar uma ordem com application/xml.
+
+    POST /user
+        Criar um novo usuário com application/json.
+        Criar um novo usuário com application/xml.
+
+    PUT /user
+        Atualizar um usuário com application/json.
+        Atualizar um usuário com application/xml.
+
+    POST /user/createWithList
+        Criar múltiplos usuários com application/json.
+        Criar múltiplos usuários com application/xml.
+
+    GET /user/{username}
+        Obter detalhes com application/json.
+        Obter detalhes com application/xml.
+
+    PUT /user/{username}
+        Atualizar um usuário com application/json.
+        Atualizar um usuário com application/xml.
+
+    DELETE /user/{username}
+        Deletar um usuário com application/json.
+        Deletar um usuário com application/xml.
+
+Nível 4: (um teste para cada tipo de HTTP status para cada endpoint <2XX, 4XX, 5XX>)
+
+    POST /pet
+        Resposta 200: Pet adicionado com sucesso.
+        Resposta 405: Dados inválidos fornecidos.
+
+    PUT /pet
+        Resposta 200: Pet atualizado com sucesso.
+        Resposta 400: ID inválido fornecido.
+        Resposta 404: Pet não encontrado.
+
+    GET /pet/findByStatus
+        Resposta 200: Pets encontrados com sucesso.
+        Resposta 400: Status inválido fornecido.
+
+    GET /pet/findByTags
+        Resposta 200: Pets encontrados com sucesso.
+        Resposta 400: Tag inválida fornecida.
+
+    GET /pet/{petId}
+        Resposta 200: Pet encontrado com sucesso.
+        Resposta 404: Pet não encontrado.
+
+    POST /pet/{petId}
+        Resposta 200: Pet atualizado com sucesso.
+        Resposta 404: Pet não encontrado.
+
+    DELETE /pet/{petId}
+        Resposta 200: Pet deletado com sucesso.
+        Resposta 404: Pet não encontrado.
+
+    GET /store/inventory
+        Resposta 200: Inventário consultado com sucesso.
+        Resposta 500: Erro no servidor ao consultar inventário.
+
+    POST /store/order
+        Resposta 200: Ordem criada com sucesso.
+        Resposta 405: Dados inválidos fornecidos.
+
+    GET /store/order/{orderId}
+        Resposta 200: Ordem encontrada com sucesso.
+        Resposta 404: Ordem não encontrada.
+
+    DELETE /store/order/{orderId}
+        Resposta 200: Ordem deletada com sucesso.
+        Resposta 404: Ordem não encontrada.
+
+    POST /user
+        Resposta 200: Usuário criado com sucesso.
+        Resposta 405: Dados inválidos fornecidos.
+
+    PUT /user
+        Resposta 200: Usuário atualizado com sucesso.
+        Resposta 400: Dados inválidos fornecidos.
+
+    POST /user/createWithList
+        Resposta 200: Usuários criados com sucesso.
+        Resposta 405: Dados inválidos fornecidos.
+
+    GET /user/{username}
+        Resposta 200: Usuário encontrado com sucesso.
+        Resposta 404: Usuário não encontrado.
+
+    PUT /user/{username}
+        Resposta 200: Usuário atualizado com sucesso.
+        Resposta 400: Dados inválidos fornecidos.
+
+    DELETE /user/{username}
+        Resposta 200: Usuário deletado com sucesso.
+        Resposta 404: Usuário não encontrado.
+
+Nível 5: (um teste para cada HTTP status disponível para cada endpoint)
+
+    POST /pet
+        Resposta 200: Pet adicionado com sucesso.
+        Resposta 405: Dados inválidos fornecidos.
+
+    PUT /pet
+        Resposta 200: Pet atualizado com sucesso.
+        Resposta 400: ID inválido fornecido.
+        Resposta 404: Pet não encontrado.
+        Resposta 405: Validação de dados falhou.
+
+    GET /pet/findByStatus
+        Resposta 200: Pets encontrados com sucesso.
+        Resposta 400: Status inválido fornecido.
+
+    GET /pet/findByTags
+        Resposta 200: Pets encontrados com sucesso.
+        Resposta 400: Tag inválida fornecida.
+
+    GET /pet/{petId}
+        Resposta 200: Pet encontrado com sucesso.
+        Resposta 404: Pet não encontrado.
+
+    POST /pet/{petId}
+        Resposta 200: Pet atualizado com sucesso.
+        Resposta 404: Pet não encontrado.
+
+    DELETE /pet/{petId}
+        Resposta 200: Pet deletado com sucesso.
+        Resposta 404: Pet não encontrado.
+
+    GET /store/inventory
+        Resposta 200: Inventário consultado com sucesso.
+        Resposta 500: Erro no servidor ao consultar inventário.
+
+    POST /store/order
+        Resposta 200: Ordem criada com sucesso.
+        Resposta 405: Dados inválidos fornecidos.
+
+    GET /store/order/{orderId}
+        Resposta 200: Ordem encontrada com sucesso.
+        Resposta 404: Ordem não encontrada.
+
+    DELETE /store/order/{orderId}
+        Resposta 200: Ordem deletada com sucesso.
+        Resposta 404: Ordem não encontrada.
+
+    POST /user
+        Resposta 200: Usuário criado com sucesso.
+        Resposta 405: Dados inválidos fornecidos.
+
+    PUT /user
+        Resposta 200: Usuário atualizado com sucesso.
+        Resposta 400: Dados inválidos fornecidos.
+
+    POST /user/createWithList
+        Resposta 200: Usuários criados com sucesso.
+        Resposta 405: Dados inválidos fornecidos.
+
+    GET /user/{username}
+        Resposta 200: Usuário encontrado com sucesso.
+        Resposta 400: Nome de usuário inválido fornecido.
+        Resposta 404: Usuário não encontrado.
+
+    PUT /user/{username}
+        Resposta 200: Usuário atualizado com sucesso.
+        Resposta 400: Dados inválidos fornecidos.
+
+    DELETE /user/{username}
+        Resposta 200: Usuário deletado com sucesso.
+        Resposta 400: Nome de usuário inválido fornecido.
+        Resposta 404: Usuário não encontrado.
+
+Nível 6: (um teste para cada response-body para cada endpoint)
+
+    POST /pet
+        Resposta 200: Corpo de resposta com detalhes do pet adicionado.
+        Resposta 405: Corpo de resposta com mensagem de erro.
+
+    PUT /pet
+        Resposta 200: Corpo de resposta com detalhes do pet atualizado.
+        Resposta 400: Corpo de resposta com mensagem de erro por ID inválido.
+        Resposta 404: Corpo de resposta com mensagem de erro por pet não encontrado.
+        Resposta 405: Corpo de resposta com mensagem de erro de validação.
+
+    GET /pet/findByStatus
+        Resposta 200: Corpo de resposta com lista de pets por status.
+        Resposta 400: Corpo de resposta com mensagem de erro por status inválido.
+
+    GET /pet/findByTags
+        Resposta 200: Corpo de resposta com lista de pets por tags.
+        Resposta 400: Corpo de resposta com mensagem de erro por tag inválida.
+
+    GET /pet/{petId}
+        Resposta 200: Corpo de resposta com detalhes do pet.
+        Resposta 404: Corpo de resposta com mensagem de erro por pet não encontrado.
+
+    POST /pet/{petId}
+        Resposta 200: Corpo de resposta com detalhes do pet atualizado.
+        Resposta 404: Corpo de resposta com mensagem de erro por pet não encontrado.
+
+    DELETE /pet/{petId}
+        Resposta 200: Corpo de resposta confirmando a exclusão do pet.
+        Resposta 404: Corpo de resposta com mensagem de erro por pet não encontrado.
+
+    GET /store/inventory
+        Resposta 200: Corpo de resposta com detalhes do inventário.
+        Resposta 500: Corpo de resposta com mensagem de erro de servidor.
+
+    POST /store/order
+        Resposta 200: Corpo de resposta com detalhes da ordem criada.
+        Resposta 405: Corpo de resposta com mensagem de erro por dados inválidos.
+
+    GET /store/order/{orderId}
+        Resposta 200: Corpo de resposta com detalhes da ordem.
+        Resposta 404: Corpo de resposta com mensagem de erro por ordem não encontrada.
+
+    DELETE /store/order/{orderId}
+        Resposta 200: Corpo de resposta confirmando a exclusão da ordem.
+        Resposta 404: Corpo de resposta com mensagem de erro por ordem não encontrada.
+
+    POST /user
+        Resposta 200: Corpo de resposta com detalhes do usuário criado.
+        Resposta 405: Corpo de resposta com mensagem de erro por dados inválidos.
+
+    PUT /user
+        Resposta 200: Corpo de resposta com detalhes do usuário atualizado.
+        Resposta 400: Corpo de resposta com mensagem de erro por dados inválidos.
+
+    POST /user/createWithList
+        Resposta 200: Corpo de resposta com detalhes dos usuários criados.
+        Resposta 405: Corpo de resposta com mensagem de erro por dados inválidos.
+
+    GET /user/{username}
+        Resposta 200: Corpo de resposta com detalhes do usuário.
+        Resposta 400: Corpo de resposta com mensagem de erro por nome de usuário inválido.
+        Resposta 404: Corpo de resposta com mensagem de erro por usuário não encontrado.
+
+    PUT /user/{username}
+        Resposta 200: Corpo de resposta com detalhes do usuário atualizado.
+        Resposta 400: Corpo de resposta com mensagem de erro por dados inválidos.
+
+    DELETE /user/{username}
+        Resposta 200: Corpo de resposta confirmando a exclusão do usuário.
+        Resposta 400: Corpo de resposta com mensagem de erro por nome de usuário inválido.
+        Resposta 404: Corpo de resposta com mensagem de erro por usuário não encontrado.
