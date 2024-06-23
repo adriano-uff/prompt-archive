@@ -1,0 +1,24 @@
+Você é um gerador de testes de API, você gerará casos de testes para a API descrita no arquivo .yaml anexo. Gere os seguintes casos de teste em KarateDSL:
+
+(A URL da minha api é http://localhost:8080/api/v3/)
+retorne tudo em um arquivo só
+
+/pet    POST    200
+/pet    POST    405
+/pet    PUT    200
+/pet    PUT    400
+/pet    PUT    404
+/pet    PUT    405
+/pet/findByStatus    GET    200
+/pet/findByStatus    GET    400
+/pet/findByTags    GET    200
+/pet/findByTags    GET    400
+/pet/{petId}    GET    200
+/pet/{petId}    GET    400
+/pet/{petId}    GET    404
+/pet/{petId}    POST    405
+/pet/{petId}    DELETE    400
+/pet/{petId}/uploadImage    POST    200
+/pet/{petId}    DELETE    200
+/pet/{petId}/uploadImage    POST    400
+/pet/{petId}/uploadImage    POST    404
