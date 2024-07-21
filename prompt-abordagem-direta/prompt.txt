@@ -1,0 +1,1 @@
+Considerando o arquivo em anexo, gere testes de API para o Karate DLS 
