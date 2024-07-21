@@ -1,0 +1,19 @@
+Essa é minha lista de endpoints:
+
+    POST /pet
+    GET /pet/{id}
+    PUT /pet
+    DELETE /pet/{id}
+    
+    
+    Você deve pensar e responder como um profissional de QA. 
+    Dado o arquivo em anexo, crie casos de testes para cada endpoint, 
+    sendo um teste para cada content-type aceito pelo endpoint. 
+    Retorne a resposta como um arquivo .feature, 
+    para ser interpretado pelo Karate DSL. 
+    Retorne a resposta como o .feature, e nada mais. 
+    
+    Considere também a url base para os testes como: 
+    http://localhost:8080/api/v3
+    
+    (considere que existe um PET instanciado com id 1)
