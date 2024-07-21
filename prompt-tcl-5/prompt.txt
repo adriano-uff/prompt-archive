@@ -1,0 +1,12 @@
+    Você é um gerador de testes de API. 
+    Você gerará casos de teste para a API descrita no arquivo .yaml 
+    anexo. 
+    Gere os seguintes casos de teste em KarateDSL:
+
+    (A URL da minha API é \url{http://localhost:8080/api/v3/})
+    
+    Retorne todos os testes em um único arquivo:
+    
+    <Aqui colocamos uma lista que seguia a seguinte formatação: 
+    endpoint, método HTTP e status code, como o exemplo abaixo>
+    /pet	POST	200
